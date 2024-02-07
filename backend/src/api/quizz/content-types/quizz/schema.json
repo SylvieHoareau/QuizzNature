@@ -32,11 +32,11 @@
       },
       "type": "text"
     },
-    "quizzes": {
+    "questions": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::question.question",
-      "mappedBy": "questions"
+      "mappedBy": "quizzes"
     }
   }
 }

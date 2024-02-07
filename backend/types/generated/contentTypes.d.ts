@@ -422,7 +422,7 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    questions: Attribute.Relation<
+    quizzes: Attribute.Relation<
       'api::question.question',
       'oneToOne',
       'api::quizz.quizz'
@@ -480,7 +480,7 @@ export interface ApiQuizzQuizz extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    quizzes: Attribute.Relation<
+    questions: Attribute.Relation<
       'api::quizz.quizz',
       'oneToOne',
       'api::question.question'

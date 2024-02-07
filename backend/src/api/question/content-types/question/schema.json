@@ -71,11 +71,11 @@
       "private": true,
       "required": true
     },
-    "questions": {
+    "quizzes": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::quizz.quizz",
-      "inversedBy": "quizzes"
+      "inversedBy": "questions"
     }
   }
 }
