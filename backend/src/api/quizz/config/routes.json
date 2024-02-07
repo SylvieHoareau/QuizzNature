@@ -1,0 +1,12 @@
+{
+    "routes": [
+        { 
+            "method": "POST",
+            "path": "/quizzes/:id/score",
+            "handler": "quizz.score",
+            "config": {
+                "policies": []
+            }
+        }
+    ]
+}
