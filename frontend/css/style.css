@@ -1,0 +1,9 @@
+/*CSS Général*/
+
+:root {
+    --background-color: #e0ffef;
+    --primary-color: #6afdb1;
+    --secondary-color: #15f782;
+    --tertiary-color: #006839;
+    --accent-color: #a2ff00;
+}

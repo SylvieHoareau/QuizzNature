@@ -1,0 +1,7 @@
+/*Pour les écrans de mobiles*/
+@media screen  and (max-width: 320px){
+    .card {
+        width: 25px;
+        height: 25px;
+    }
+}

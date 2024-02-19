@@ -1,0 +1,17 @@
+/* Pour les écrans de bureau (desktop) */
+@media screen and (min-width: 1024px) {
+    .card {
+        width: 250px;
+        height: 125px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .card-header {
+        background-color: rgba(255, 178, 178, 0.3);
+    }
+
+    .card-body {
+        background-color: rgb(255, 255, 255);
+    }
+}

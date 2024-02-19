@@ -1,0 +1,7 @@
+/*Pour l'impression*/
+@media print {
+    .card {
+        width: 25px;
+        height: 25px;
+    }
+}
