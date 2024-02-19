@@ -1,9 +1,193 @@
 /*CSS Général*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --background-color: #e0ffef;
-    --primary-color: #6afdb1;
-    --secondary-color: #15f782;
-    --tertiary-color: #006839;
-    --accent-color: #a2ff00;
+    --background-color: #e8fccf;
+    --primary-color: #3da35d;
+    --secondary-color: #3e8914;
+    --tertiary-color: #134611;
+    --accent-color: #96e072;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--background-color);
+    padding: 10px;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#logo {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.presentation {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.card-container {
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-header {
+    color: white;
+    background-color: var(--tertiary-color);
+    padding: 0 0 0 10px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 250px;
+    padding:  10px 5px 10px 5px;
+    margin: 10px;
+    height: 150px;
+}
+
+.card-footer {
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+}
+
+button {
+    color: white;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+.quizz-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.quizz-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.question-card {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#question p{
+   font-weight: 800;
+}
+
+#category {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 10px;
+
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    padding: 10px;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
 }

@@ -4,23 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz Nature</title>
+    <!--style local-->
     <link rel="stylesheet" media="screen" href="../frontend/css/style.css"></link>
-    <link rel="stylesheet" media="screen and (min-width: 1024px)"href="../frontend/css/desktop.css"></link>
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../frontend/css/desktop.css"></link>
     <link rel="stylesheet" media="screen and (max-width: 320px)" href="../frontend/css/mobile.css"></link>
     <link rel="stylesheet" media="screen and (min-width: 768px and max-width: 1024px)" href="../frontend/css/tablet.css"></link>
     <link rel="stylesheet" meadia="print" href="../frontend/css/print.css"></link>
+    <!--fontawesome-->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
 </head>
 <body>
-    <h1>Bienvenue</h1>
-    <p>La nature est un trésor, préservons-la !</p>
-    <p>Augmentez vos connaissances grâce à nos quizz.</p>
-    <div class="card">
-        <div class="card-header">
-            Quizz Rubis
+    <header>
+        <img id="logo" src="../frontend/assets/logo.png" alt="logo" width="75px" height="75px">
+        <h1>Quizz Nature</h1>
+        <ul>
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a href="../index.html">Accueil</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-user"></i>
+                <a href="../html/login.html">Connexion</a>
+            </li>
+        </ul>
+    </header>
+    <div class="presentation">
+        <h1>Bienvenue</h1>
+        <p>La nature est un trésor, préservons-la !</p>
+        <p>Augmentez vos connaissances sur l'environnement grâce à nos quizz.</p>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-regular fa-gem"></i>
+                <p>Quizz Rubis</p>
+            </div>
+            <div class="card-body">
+                <p>Quizz pour la nature</p>
+            </div>
+            <div class="card-footer">
+                <button role="button"><a href="../frontend/html/quizz-rubis.html">Démarrez le quizz</a></button>
+            </div>
         </div>
-        <div class="card-body">
-            Quizz pour la nature
+        <div class="card">
+            <div class="card-header">
+                <p>Quizz Emeraude</p>
+            </div>
+            <div class="card-body">
+                <p>Quizz pour la nature</p>
+            </div>
+            <div class="card-footer">
+                <button role="button"><a href="../frontend/html/quizz-rubis.html">Démarrez le quizz</a></button>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <p>Quizz Nature 2024</p>
+    </footer>
 </body>
 </html>
