@@ -869,7 +869,7 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    answer: Attribute.String &
+    correctAnswer: Attribute.String &
       Attribute.Required &
       Attribute.Private &
       Attribute.SetPluginOptions<{

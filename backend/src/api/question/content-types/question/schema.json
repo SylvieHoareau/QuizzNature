@@ -61,7 +61,7 @@
       "type": "string",
       "required": true
     },
-    "answer": {
+    "correctAnswer": {
       "pluginOptions": {
         "i18n": {
           "localized": true

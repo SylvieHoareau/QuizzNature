@@ -30,48 +30,94 @@
     <div class="quizz-container">
         <div class="quizz-name">
             <i class="fa-solid fa-gem"></i>
-            <h1>Quizz Rubis</h1>
+            <h1 id="quizzTitle">Quizz Rubis</h1>
         </div>
         <div id="score">
              point(s)
         </div>
         <div class="question-card">
             <div id="category">
-                <p>Faune</p>
+                <p id="categoryText">Faune</p>
            </div>
             <div id="question">
                 <div class="question-header">
-                    <p>Quelle est la question ?</p>
+                    <p id="questionText">Quelle est la question ?</p>
                 </div>
                 <div class="question-body">
                     <div>
                         <input type="radio" value="A" name="A" id="A" checked/>
-                        <label for="A">A</label>
+                        <label for="A" id="labelA">A</label>
                     </div>
                     <div>
                         <input type="radio" value="B" name="B" id="B"/>
-                        <label for="B">B</label>
+                        <label for="B" id="labelB">B</label>
                     </div>
                     <div>
                         <input type="radio" value="C" name="C" id="C"/>
-                        <label for="C">C</label>
+                        <label for="C" id="labelC">C</label>
                     </div>
                     <div>
                         <input type="radio" value="D" name="D" id="D"/>
-                        <label for="D">D</label>
+                        <label for="D" id="labelD">D</label>
                     </div>
                     <div>
-                        <input type="submit" value="Valider"/>
+                        <input type="submit" value="Valider" onclick="validateAnswer()"/>
                     </div>
                 </div>
             </div>
         <div id="answer">
-            <p>La bonne réponse est : </p>
+            <p id="answerText">La bonne réponse est : </p>
         </div>
     </div>
    
     <footer>
         <p>Quizz Nature 2024</p>
     </footer>
+
+    <script>
+        // Fonction pour récupérer l'ID du quizz depuis l'URL
+        const getQuizzIdFromUrl = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Fonction pour récupérer les détails du quizz depuis l'API Strapi
+        const getQuizzDetails = (quizzId) => {
+            const apiUrl = `http://localhost:1337/api/quizzes/${quizzId}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    displayQuizzDetails(data.attributes);
+                })
+                .catch(error => console.error("Erreur lors de la récupération des détails", error));
+            
+            // Fonction pour afficher les détails du quizz dans l'interface utilisateur
+            const displayQuizzDetails = (quizz) => {
+                document.getElementById('quizzTitle').innerText = quizz.name;
+                document.getElementById('categoryText').innerText = quizz.category;
+                document.getElementById('questionText').innerText = quizz.attributes.text;
+                document.getElementById('labelA').innerText = quizz.attributes.options.A;
+                document.getElementById('labelB').innerText = quizz.attributes.options.B;
+                document.getElementById('labelC').innerText = quizz.attributes.options.C;
+                document.getElementById('labelD').innerText = quizz.attributes.options.D;
+                document.getElementById('answerText').innerText = `La bonne réponse est : ${quizz.correctAnswer}`;
+
+            }
+
+            // Fonction appelée lors de la validation de la réponse
+            const validateAnswer = () => {
+                // Logique pour valider la réponse et mettre à jour le score
+            }
+
+            // Au chargement de la page, récupère l'ID du quizz depuis l'URL et charger les détails du quizz
+            document.addEventListener("DOMContentLoaded", () => {
+                const quizzId = getQuizzIdFromUrl();
+                if (quizzId) {
+                    getQuizzDetails(quizzId);
+                }
+            })
+        }
+    </script>
 </body>
 </html>

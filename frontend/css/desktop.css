@@ -69,7 +69,7 @@
     .card {
         width: 250px;
         height: max-content;
-        border: 1px solid black;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
         margin: 5px;
         padding: 0 0 10px 0;
@@ -80,11 +80,15 @@
         justify-content: center;
     }
 
-    .card-header {
-        color: white;
-        background-color: var(--tertiary-color);
-        padding: 0 0 0 10px;
-        width: 250px;
+    .card:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-header, .card-footer {
+        color: #fff;
+        background-color: #333;
+        padding: 10px;
+        width: 100%;
         height: max-content;
         border-radius: 10px 10px 0 0;
         display: flex;
@@ -96,7 +100,7 @@
 
     .card-body {
         background-color: rgba(255, 255, 255, 0.5);
-        width: 250px;
+        width: 100%;
         height: max-content;
         padding:  10px 5px 10px 5px;
         margin: 0;
