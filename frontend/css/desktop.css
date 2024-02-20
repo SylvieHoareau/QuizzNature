@@ -56,7 +56,7 @@
 
     .card-container {
         width: 100vw;
-        height: 400px;
+        height: max-content;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -68,7 +68,7 @@
 
     .card {
         width: 250px;
-        height: 250px;
+        height: max-content;
         border: 1px solid black;
         border-radius: 10px;
         margin: 5px;
@@ -85,7 +85,7 @@
         background-color: var(--tertiary-color);
         padding: 0 0 0 10px;
         width: 250px;
-        height: 50px;
+        height: max-content;
         border-radius: 10px 10px 0 0;
         display: flex;
         flex-direction: row;
@@ -97,15 +97,17 @@
     .card-body {
         background-color: rgba(255, 255, 255, 0.5);
         width: 250px;
+        height: max-content;
         padding:  10px 5px 10px 5px;
         margin: 0;
-        height: 150px;
     }
 
     .card-footer {
         padding: 10px;
+        margin: 0;
         width: 250px;
-        height: 50px;
+        height: max-content;
+        border-radius: 0 0 10px 10px;
     }
 
     button {
@@ -129,7 +131,7 @@
         outline: 2px solid var(--accent-color);
     }
 
-    /*Page Quizz*/
+    /*Page quizz.html*/
 
     .quizz-container {
         width: 100vw;
@@ -225,6 +227,8 @@
         padding: 10px;
         margin: 20px;
     }
+
+    /*Pied de page*/
 
     footer {
         background-color: var(--primary-color);

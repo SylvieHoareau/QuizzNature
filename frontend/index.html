@@ -34,7 +34,7 @@
         <p>Augmentez vos connaissances sur l'environnement grâce à nos quizz.</p>
     </div>
     <div class="card-container">
-        <div class="card">
+       <!--  <div class="card">
             <div class="card-header">
                 <i class="fa-regular fa-gem"></i>
                 <p>Quizz Rubis</p>
@@ -43,24 +43,57 @@
                 <p>Quizz pour la nature</p>
             </div>
             <div class="card-footer">
-                <button role="button"><a href="../frontend/html/quizz-rubis.html">Démarrez le quizz</a></button>
+                <button role="button"><a href="../frontend/html/quizz.html">Démarrez le quizz</a></button>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <p>Quizz Emeraude</p>
-            </div>
-            <div class="card-body">
-                <p>Quizz pour la nature</p>
-            </div>
-            <div class="card-footer">
-                <button role="button"><a href="../frontend/html/quizz-rubis.html">Démarrez le quizz</a></button>
-            </div>
-        </div>
+        </div> -->
     </div>
     
     <footer>
         <p>Quizz Nature 2024</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // URL de l'API
+            const apiUrl = 'http://localhost:1337/api/quizzes';
+
+            // Requête pour récupérer les données
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Traiter les données et mettre à jour l'interface utilisateur
+                    displayQuizzes(data.data);
+                })
+                .catch(error => console.error("Erreur lors de la récupération des données :", error));
+
+            const displayQuizzes = (quizzes) => {
+                // Récupérer l'élément de la card-container où on souhaite afficher le quizz
+                const cardContainer = document.querySelector(".card-container");
+
+                // Parcourir les quizz et créez dynamiquement les éléments HTML
+                quizzes.forEach(quizz => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    const cardHeader = document.createElement("div");
+                    cardHeader.classList.add("card-header");
+                    cardHeader.innerHTML = `<i class="fa-regular fa-gem"></i><p>${quizz.attributes.name}</p>`;
+
+                    const cardBody = document.createElement("div");
+                    cardBody.classList.add("card-body");
+                    cardBody.innerHTML = `<p>${quizz.attributes.description}</p>`;
+
+                    const cardFooter = document.createElement("div");
+                    cardFooter.classList.add("card-footer");
+                    cardFooter.innerHTML = `<button role="button"><a href="../frontend/html/quizz.html?id=${quizz.id}">Démarrez le quizz</a></button>`;
+
+                    card.appendChild(cardHeader);
+                    card.appendChild(cardBody);
+                    card.appendChild(cardFooter);
+
+                    cardContainer.appendChild(card)
+                })
+            }
+        })
+    </script>
 </body>
 </html>

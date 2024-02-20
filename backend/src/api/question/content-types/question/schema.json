@@ -71,9 +71,15 @@
       "private": true,
       "required": true
     },
-    "quizzes": {
+    "category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "questions"
+    },
+    "quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
       "target": "api::quizz.quizz",
       "inversedBy": "questions"
     }
