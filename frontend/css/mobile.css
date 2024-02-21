@@ -1,8 +1,275 @@
 
 /*Pour les écrans de mobiles*/
 @media screen  and (max-width: 320px){
+  
+    header {
+        color: #fff;
+        background-color: #333;
+        padding: 10px 0;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    #logo {
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+    }
+
+    header ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    header ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    header ul li a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .presentation {
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .card-container {
+        width: 100vw;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+        padding: 20px;
+        margin: 0 auto;
+        background-color: var(--secondary-color);
+    }
+
     .card {
-        width: 25px;
-        height: 25px;
+        width: 300px;
+        height: max-content;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        margin: 20px;
+        padding: 0 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-header, .card-footer {
+        color: #fff;
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        width: 250px;
+        height: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+    }
+
+    .card-body {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: max-content;
+        padding:  10px 5px 10px 5px;
+        margin: 10px;
+        height: max-content;
+    }
+
+    button {
+        color: white;
+        background-color: var(--tertiary-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    button a {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Page quizz.html*/
+
+    .quizz-container {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: auto 1fr auto;
+        grid-gap: 10px; */
+        align-items: center;
+        justify-items: center;
+        background-color: var(--background-color);
+    }
+
+    .quizz-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        grid-column: 1 / -1;
+    }
+
+    #score {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        grid-column: 1/-1;
+    }
+
+    .question-card {
+        width: 400px;
+        height: 800px;
+        border: 1px solid var(--primary-color);
+        border-radius: 10px;
+        margin: 5px;
+        padding: 0 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    #question {
+        width: 90%;
+        margin: 10px;
+    }
+
+    #question p{
+    font-weight: 800;
+    }
+
+    #category {
+        color: white;
+        background-color: var(--primary-color);
+        width: 100%;
+        padding: 10px;
+        position: relative;
+    }
+
+    #category::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        border-top: 10px solid var(--primary-color);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+
+    .question-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label::before {
+        background-color: var(--secondary-color);
+    }
+
+    input[type="submit"] {
+        color: white;
+        background-color:var(--tertiary-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        transform: scale(1.1);
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    label:hover {
+        opacity: 0.8;
+    }
+
+    label::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--secondary-color);
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    #answer {
+        width: 90%;
+        margin: 10px;
+    }
+
+    #answerText {
+        font-weight: 800;
+        color: var(--accent-color);
+    }
+
+    #answerText::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    footer {
+        color: #fff;
+        background-color: #333;
+        text-align: center;
+        padding: 10px;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
     }
 }
