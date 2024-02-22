@@ -69,6 +69,15 @@
         padding: 10px;
     }
 
+    .question {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
+
     .question-card-container {
         width: 100vw;
         height: 100vh;
@@ -78,10 +87,11 @@
     .question-card {
         width: 600px;
         height: max-content;
+        background-color: white;
         border: 1px solid var(--primary-color);
         border-radius: 10px;
         margin: 10em auto;
-        padding: 0 0 10px 0;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -115,11 +125,20 @@
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
     }
+
+    .question {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
     
     .question-body {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     
     input[type="radio"] {
