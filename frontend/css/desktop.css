@@ -1,6 +1,17 @@
 /* Pour les écrans de bureau (desktop) */
 
 @media screen and (min-width: 1024px) {
+
+    body {
+        font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
+        background-image: url('../assets/background.jpg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
     
     header {
         color: white;
@@ -104,18 +115,42 @@
 
     .slide:nth-child(1) {
         background-color: #49b293;
+        background-image: url('../assets/saphir-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 
     .slide:nth-child(2) {
         background-color: #b03532;
+        background-image: url('../assets/rubis-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 
     .slide:nth-child(3) {
         background-color: #6a478f;
+        background-image: url('../assets/emeraude-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 
     .slide:nth-child(4) {
         background-color: #da6f2b;
+        background-image: url('../assets/topaze-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 
     .presentation {
@@ -220,15 +255,38 @@
         grid-gap: 10px; */
         align-items: center;
         justify-items: center;
-        background-color: var(--background-color);
+        background-color: #f0f0f0;
+        background-image: url('../assets/background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
-    
-    .quizz-name {
+
+    .quizz-name-container {
+        width: 100vw;
         display: flex;
         flex-direction: row;
         align-items: center;
+        align-content: center;
         justify-content: center;
-        grid-column: 1 / -1;
+    }
+    
+    .quizz-name {
+        color: white;
+        background-color: #333;
+        width: 50%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        
+    }
+
+    .quizz-name i {
+        padding: 10px;
     }
     
     #score {
@@ -236,8 +294,10 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        padding: 10px;
-        grid-column: 1/-1;
+        width: 50%;
+        height: 10vh;
+        padding: 10px 20px 10px 10px;
+        background-color: var(--accent-color);
     }
     
     .question-card {

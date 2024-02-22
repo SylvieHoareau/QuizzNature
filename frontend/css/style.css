@@ -3,10 +3,15 @@
 
 :root {
     --background-color: #72A2C0;
-    --primary-color: #192E5B;
+    --primary-color: #00743F;
     --secondary-color: #1D65A6;
-    --tertiary-color: #00743F;
+    --tertiary-color: #192E5B;
     --accent-color: #F2A104;
+    --light-blue: #72A2C0;
+    --dark-blue: #192E5B;
+    --medium-blue: #1D65A6;
+    --green: #00743F;
+    --yellow: #F2A104;
 }
 
 * {
@@ -17,12 +22,18 @@
 
 body {
     font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    background-image: url('../assets/background.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 header {
     color: #fff;
-    background-color: #333;
+    background-color: var(--primary-color);
     padding: 10px 0;
     width: 100vw;
     height: 10vh;
@@ -219,7 +230,7 @@ button a {
     grid-gap: 10px; */
     align-items: center;
     justify-items: center;
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
 }
 
 .quizz-name {
@@ -242,6 +253,7 @@ button a {
 .question-card {
     width: 400px;
     height: 800px;
+    background-color: white;
     border: 1px solid var(--primary-color);
     border-radius: 10px;
     margin: 5px;
@@ -264,7 +276,7 @@ button a {
 
 #category {
     color: white;
-    background-color: var(--primary-color);
+    background-color: var(--tertiary-color);
     width: 100%;
     padding: 10px;
     position: relative;
@@ -296,7 +308,7 @@ input[type="radio"]:checked + label::before {
 
 input[type="submit"] {
     color: white;
-    background-color:var(--tertiary-color);
+    background-color:var(--primary-color);
     border: none;
     border-radius: 10px;
     padding: 10px;

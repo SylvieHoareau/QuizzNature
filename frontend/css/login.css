@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --background-color: #e0ffef;
-    --primary-color: #6afdb1;
-    --secondary-color: #15f782;
-    --tertiary-color: #006839;
-    --accent-color: #a2ff00;
+     --background-color: #72A2C0;
+     --primary-color: #00743F;
+     --secondary-color: #1D65A6;
+     --tertiary-color: #192E5B;
+     --accent-color: #F2A104;
 }
 
 * {
@@ -16,7 +16,13 @@
 
 body {
     font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
-    background-color: var(--primary-color);
+    background-color: #f0f0f0;
+    background-image: url('../assets/background.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 .login-container {
@@ -28,44 +34,52 @@ body {
 }
 
 /*Pour les écrans d'ordinateurs*/
-@media screen  and (min-width: 1024px){
+@media screen  and (min-width: 1080px) and (max-width:2560px) {
    .login-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        margin: 200px auto;
+     width: 50vw;
+     height: 50vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     align-content: center;
+     justify-content: center;
+     margin: auto;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
    }
 
-   form{
-        background-color: var(--tertiary-color);
-        margin: 10px auto;
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 10px;
+   form {
+     width: 30vw;
+     height: 30vw;
+     color: white;
+     background-color: var(--primary-color);
+     margin: 10px auto;
+     padding: 10px;
+     border: 1px solid black;
+     border-radius: 10px;
+     text-align: center;
    }
 
    .form-input {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: space-between;
-        padding: 10px;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     align-content: center;
+     justify-content: space-between;
+     padding: 10px;
    }
 
    label {
-        color: white;
+     color: white;
    }
 
    .form-submit {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     align-content: center;
+     justify-content: center;
+     padding: 10px;
+     margin: 10px;
    }
 
    .form-submit a {
@@ -86,10 +100,170 @@ body {
    }
 
    input[type="submit"] {
+     background-color: var(--accent-color);
         cursor: pointer;
    }
 
-   input[type="submit"]:hover {
-        background-color: var(--accent-color);
+   input[type="submit"]:hover, input[type="submit"]:focus {
+        background-color: var(--secondary-color);
    }
+}
+
+/*Pour les écrans de tablettes*/
+@media screen  and (min-width: 768px) and (max-width: 1080px){
+
+     .login-container {
+          width: 75vw;
+          height: 75vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          margin: auto;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+     
+        form {
+          width: 50vw;
+          height: 50vh;
+          color: white;
+          background-color: var(--primary-color);
+          margin: 10px auto;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 10px;
+          text-align: center;
+        }
+     
+        .form-input {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          align-content: center;
+          justify-content: space-between;
+          padding: 10px;
+        }
+     
+        label {
+          color: white;
+        }
+     
+        .form-submit {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          padding: 10px;
+          margin: 10px;
+        }
+     
+        .form-submit a {
+             text-decoration: none;
+             color: white;
+             padding: 5px;
+        }
+     
+        .form-submit a:hover {
+             text-decoration: none;
+             color: var(--accent-color);
+             padding: 5px;
+         }
+     
+        input {
+             padding: 10px;
+             border-radius: 10px;
+        }
+     
+        input[type="submit"] {
+          background-color: var(--accent-color);
+             cursor: pointer;
+        }
+     
+        input[type="submit"]:hover, input[type="submit"]:focus {
+             background-color: var(--secondary-color);
+        }
+}
+
+
+/*Pour les écrans de mobiles*/
+@media screen  and (min-width: 320px) and (max-width: 768px){
+
+     .login-container {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          margin: auto;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+     }
+
+     form {
+          width: 75vw;
+          height: 50vh;
+          color: white;
+          background-color: var(--primary-color);
+          margin: 10px auto;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 10px;
+          text-align: center;
+     }
+
+     .form-input {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          justify-content: space-between;
+          padding: 10px;
+     }
+
+     label {
+          color: white;
+     }
+
+     .form-submit {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          padding: 10px;
+          margin: 10px;
+     }
+
+     .form-submit a {
+          text-decoration: none;
+          color: white;
+          padding: 5px;
+     }
+
+     .form-submit a:hover {
+          text-decoration: none;
+          color: var(--accent-color);
+          padding: 5px;
+     }
+
+     input {
+          width: 100%;
+          padding: 10px;
+          border-radius: 10px;
+     }
+
+     input[type="submit"] {
+          background-color: var(--accent-color);
+          cursor: pointer;
+     }
+
+     input[type="submit"]:hover, input[type="submit"]:focus {
+          background-color: var(--secondary-color);
+     }
+
 }

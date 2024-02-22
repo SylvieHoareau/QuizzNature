@@ -28,13 +28,16 @@
         </ul>
     </header>
     <div class="quizz-container">
-        <div class="quizz-name">
-            <i class="fa-solid fa-gem"></i>
-            <h1 id="quizzTitle">Quizz Rubis</h1>
+        <div class="quizz-name-container">
+            <div class="quizz-name">
+                <i class="fa-solid fa-gem"></i>
+                <h1 id="quizzTitle">Quizz Rubis</h1>
+            </div>
+            <div id="score">
+                 point(s)
+            </div>
         </div>
-        <div id="score">
-             point(s)
-        </div>
+       
         <div class="question-card">
             <div id="category">
                 <p id="categoryText">Faune</p>
@@ -68,6 +71,9 @@
         <div id="answer">
             <p id="answerText">La bonne réponse est : </p>
         </div>
+        <div>
+            <button onclick="displayNextQuestion()">Question suivante</button>
+        </div>
     </div>
    
     <footer>
@@ -81,6 +87,8 @@
             return urlParams.get('id');
         }
 
+        let questions = []; // Déclarer la variable questions à un niveau supérieur
+
         // Fonction pour récupérer les détails du quizz depuis l'API Strapi
         const getQuizzDetails = (quizzId) => {
             const apiUrl = `http://localhost:1337/api/quizzes/${quizzId}/?populate=questions`;
@@ -88,7 +96,7 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    displayQuizzDetails(data.attributes.questions.data.attributes);
+                    displayQuizzDetails(data.data.attributes);
                 })
                 .catch(error => console.error("Erreur lors de la récupération des détails", error));
             
@@ -96,16 +104,41 @@
             const displayQuizzDetails = (quizz) => {
 
                 // Récupération des questions du quizz
-                getQuestionsDetails();
+                questions = quizz.questions.data;
 
-                document.getElementById('quizzTitle').innerText = quizz.name;
-                document.getElementById('categoryText').innerText = quizz.category.attributes.name;
-                document.getElementById('questionText').innerText = quizz.text;
-                document.getElementById('labelA').innerText = quizz.options.A;
-                document.getElementById('labelB').innerText = quizz.options.B;
-                document.getElementById('labelC').innerText = quizz.options.C;
-                document.getElementById('labelD').innerText = quizz.options.D;
-                document.getElementById('answerText').innerText = `La bonne réponse est : ${quizz.correctAnswer}`;
+                // Affichage de la première question
+                displayQuestion(questions[0]);
+
+                getQuestionDetails();
+            }
+
+            const displayQuestion = (question) => {
+                document.getElementById('quizzTitle').innerText = quizz.attributes.name;
+                document.getElementById('categoryText').innerText = question.attributes.category;
+                document.getElementById('questionText').innerText = question.attributes.text;
+                document.getElementById('labelA').innerText = question.attributes.a;
+                document.getElementById('labelB').innerText = question.attributes.b;
+                document.getElementById('labelC').innerText = question.attributes.c;
+                document.getElementById('labelD').innerText = question.attributes.d;
+                document.getElementById('answerText').innerText = `La bonne réponse est : ${question.attributes.correctAnswer}`;
+            }
+
+            let currentQuestionIndex = 0; // Variable pour suivre l'index de la question actuelle
+
+
+            const displayNextQuestion = () => {
+                // Logique pour passer à la question suivante
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex < questions.length) {
+                    // Affiche la question suivante
+                    // Obtenir la liste des questions et appeler displayQuestion
+                    displayQuestion(questions[currentQuestionIndex]);
+                } else {
+                    // Toutes les questions ont été affichées
+                    console.log("Toutes les questions ont été affichées.");
+                }
+                
 
             }
 
@@ -117,16 +150,34 @@
                 fetch(apiUrl)
                     .then(response => response.json())
                     .then(data => {
-                        displayCategoryDetails(data.attributes);
+                        displayCategoryDetails(data.data.attributes);
                     })
                     .catch(error => console.error("Erreur lors de la récupération des détails de la question", error));
 
             }
 
 
+            let scrore = 0;
+
             // Fonction appelée lors de la validation de la réponse
             const validateAnswer = () => {
                 // Logique pour valider la réponse et mettre à jour le score
+                const userAnswer = document.querySelector('input[name="answer"]:checked').value;
+
+                // Récupérer la réponse correcte de la question actuelle
+                const correctAnswer = questions[currentQuestionIndex].attributes.correctAnswer;
+
+                // Comparer la réponse sélectionnée avec la réponse correcte
+                if (userAnswer === correctAnswer) {
+                    // La réponse est correcte, mettre à jour le score
+                    score++;
+                }
+
+                // Mettre à jour l'affichage du score
+                updateScoreDisplay();
+
+                // Appeler la fonction pour passer à la question suivante
+                displayNextQuestion();
             }
 
             // Au chargement de la page, récupère l'ID du quizz depuis l'URL et charger les détails du quizz
