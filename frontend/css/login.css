@@ -50,11 +50,11 @@ body {
    form {
      width: 30vw;
      height: 30vw;
-     color: white;
-     background-color: var(--primary-color);
+     color: var(--primary-color);
+     background-color: white;
      margin: 10px auto;
      padding: 10px;
-     border: 1px solid black;
+     border: 10px solid var(--accent-color);
      border-radius: 10px;
      text-align: center;
    }
@@ -69,7 +69,7 @@ body {
    }
 
    label {
-     color: white;
+     color: var(--primary-color);
    }
 
    .form-submit {
@@ -84,7 +84,7 @@ body {
 
    .form-submit a {
         text-decoration: none;
-        color: white;
+        color: var(--accent-color);
         padding: 5px;
    }
 

@@ -1,0 +1,112 @@
+<!--quizz-rubis.html-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+    <link rel="stylesheet" media="screen" href="../css/style.css"></link>
+    <link rel="stylesheet" media="screen" href="../css/quizz.css"></link>
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../css/desktop.css"></link>
+    <link rel="stylesheet" media="screen and (max-width: 320px)" href="../css/mobile.css"></link>
+    <link rel="stylesheet" media="screen and (min-width: 768px and max-width: 1024px)" href="../css/tablet.css"></link>
+    <link rel="stylesheet" media="print" href="../css/print.css"></link>
+    <!--fontawesome-->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../assets/logo-4.jpg" alt="logo de Quizz Nature" width="100px" height="100px">
+        <h1>Quizz Nature</h1>
+        <ul>
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a href="../index.html">Accueil</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-user"></i>
+                <a href="../html/login.html">Connexion</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="quizz-name-container">
+        <div class="quizz-name">
+            <i class="fa-solid fa-gem"></i>
+            <h1 id="quizzTitle">Quizz Emeraude</h1>
+        </div>
+        <div class="score-container">
+            <span id="score">0</span> gem(s)
+        </div>
+    </div>
+    <!--Affiche les questions dans l'interface utilisateur-->
+    <div class="question-card" id="quizz-container"></div>
+        
+   
+    <footer>
+        <p>Quizz Nature 2024</p>
+    </footer>
+
+    <script>
+        // URL de l'API
+        const url = "http://localhost:1337/api/quizzes/13/?populate=questions";
+        let score = 0;
+
+        // Récupération des données de l'API
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const questions = data.data.attributes.questions.data;
+                const container = document.getElementById('quizz-container');
+
+                // Affichage des questions une par une
+                questions.forEach((question, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'question';
+                    div.innerHTML = `
+                        <div class="question-header">
+                            <h2>Question ${index + 1}</h2>
+                            <p>${question.attributes.text}</p>
+                        </div>
+                        <div class="question-body">
+                            <div>
+                                <input type="radio" value="a" name="questions${index}" id="a" checked/>
+                                <label>${question.attributes.a}</label>
+                            </div>
+                            <div>
+                                <input type="radio" value="b" name="questions${index}" id="b"/>
+                                <label>${question.attributes.b}</label>
+                            </div>
+                            <div>
+                                <input type="radio" value="c" name="questions${index}" id="c"/>
+                                <label>${question.attributes.c}</label>
+                            </div>
+                            <div>
+                                <input type="radio" value="d" name="questions${index}" id="d"/>
+                                <label>${question.attributes.d}</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" value="Valider" onclick="validateAnswer('questions${index}', '${question.attributes.correctAnswer}')"/>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                })
+                .catch(error => console.error('Erreur:', error));
+            })
+
+            const validateAnswer = (questionName, correctAnswer) => {
+                const radios = document.getElementsByName(questionName);
+                for (let i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        if (radios[i].value === correctAnswer) {
+                            score++;
+                            document.getElementById('score').innerText = score;
+                        }
+                        break;
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

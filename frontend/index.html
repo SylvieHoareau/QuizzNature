@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="../frontend/assets/logo-2.jpg" alt="logo" width="75px" height="75px">
+        <img id="logo" src="../frontend/assets/logo-4.jpg" alt="logo de Quizz Nature" width="75px" height="75px">
         <h1>Quizz Nature</h1>
         <ul>
             <li>
@@ -37,13 +37,13 @@
             &#8250;
         </button>
         <ul class="slides-container" id="slides-container">
-            <li class="slide"><h1>Bienvenue</h1></li>
-            <li class="slide"><p>La nature est un trésor, préservons-la !</p></li>
-            <li class="slide"><p>Augmentez vos connaissances sur l'environnement grâce à nos quizz.</p></li>
-            <li class="slide"></li>
+            <li class="slide"><h2 class="slide-text">Bienvenue</h2></li>
+            <li class="slide"><h3 class="slide-text">La nature est un trésor, préservons-la !</h3></li>
+            <li class="slide"><p class="slide-text">Augmentez vos connaissances sur l'environnement grâce à nos quizz.</p></li>
+            <li class="slide"><p class="slide-text">Découvrez 5 thématiques : faune, flore, changement climatique, législation environnementale et conservation de la nature.</p></li>
         </ul>
     </section>
-    <div class="card-container">
+    <div class="card-container" id="quizzContainer">
        <!--  <div class="card">
             <div class="card-header">
                 <i class="fa-regular fa-gem"></i>
@@ -77,7 +77,7 @@
 
             const displayQuizzes = (quizzes) => {
                 // Récupérer l'élément de la card-container où on souhaite afficher le quizz
-                const cardContainer = document.querySelector(".card-container");
+                const cardContainer = document.getElementById("quizzContainer");
 
                 // Parcourir les quizz et créez dynamiquement les éléments HTML
                 quizzes.forEach(quizz => {
@@ -94,13 +94,33 @@
 
                     const cardFooter = document.createElement("div");
                     cardFooter.classList.add("card-footer");
-                    cardFooter.innerHTML = `<button role="button"><a href="../frontend/html/quizz.html?id=${quizz.id}">Démarrez le quizz</a></button>`;
 
+                    // Condition pour déterminer le lien en fonction de l'ID du quizz
+                    let link = '';
+                    switch (quizz.id) {
+                        case 12: 
+                            link = '../frontend/html/quizz-rubis.html';
+                            break;
+                        case 13: 
+                            link = '../frontend/html/quizz-emeraude.html';
+                            break;
+                        case 14: 
+                            link = '../frontend/html/quizz-saphir.html';
+                            break;
+                        case 15: 
+                            link = '../frontend/html/quizz-diamant.html';
+                            break;
+                        case 16: 
+                            link = '../frontend/html/quizz-topaze.html';
+                            break;
+                    }
+                    cardFooter.innerHTML = `<button role="button"><a href="${link}">Démarrez le quizz</a></button>`;
+                   
                     card.appendChild(cardHeader);
                     card.appendChild(cardBody);
                     card.appendChild(cardFooter);
 
-                    cardContainer.appendChild(card)
+                    cardContainer.appendChild(card);
                 })
             }
         })

@@ -221,6 +221,10 @@ button a {
 
 /* Page quizz.html*/
 
+.question {
+    margin-bottom: 20px;
+}
+
 .quizz-container {
     width: 100vw;
     height: 100vh;
