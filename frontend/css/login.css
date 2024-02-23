@@ -25,13 +25,6 @@ body {
     background-size: cover;
 }
 
-.login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-}
 
 /*Pour les écrans d'ordinateurs*/
 @media screen  and (min-width: 1080px) and (max-width:2560px) {
@@ -43,7 +36,7 @@ body {
      align-items: center;
      align-content: center;
      justify-content: center;
-     margin: auto;
+     margin: 100px auto;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
    }
 
@@ -127,11 +120,11 @@ body {
         form {
           width: 50vw;
           height: 50vh;
-          color: white;
-          background-color: var(--primary-color);
+          color: var(--primary-color);
+          background-color: white;
           margin: 10px auto;
           padding: 10px;
-          border: 1px solid black;
+          border: 10px solid var(--accent-color);
           border-radius: 10px;
           text-align: center;
         }
@@ -148,7 +141,7 @@ body {
         }
      
         label {
-          color: white;
+          color: var(--primary-color);
         }
      
         .form-submit {
@@ -163,7 +156,7 @@ body {
      
         .form-submit a {
              text-decoration: none;
-             color: white;
+             color: var(--primary-color);
              padding: 5px;
         }
      
@@ -207,11 +200,11 @@ body {
      form {
           width: 75vw;
           height: 50vh;
-          color: white;
-          background-color: var(--primary-color);
+          color: var(--primary-color);
+          background-color: white;
           margin: 10px auto;
           padding: 10px;
-          border: 1px solid black;
+          border: 10px solid var(--accent-color);
           border-radius: 10px;
           text-align: center;
      }
@@ -226,7 +219,7 @@ body {
      }
 
      label {
-          color: white;
+          color: var(--primary-color);
      }
 
      .form-submit {
@@ -241,7 +234,7 @@ body {
 
      .form-submit a {
           text-decoration: none;
-          color: white;
+          color: var(--primary-color);
           padding: 5px;
      }
 
