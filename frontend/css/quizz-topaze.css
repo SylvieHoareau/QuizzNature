@@ -30,7 +30,7 @@
     .quizz-name-container {
         width: 100vw;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         align-content: center;
         justify-content: center;
@@ -39,7 +39,7 @@
     .quizz-name {
         color: white;
         background-color: #333;
-        width: 50%;
+        width: 100%;
         height: 10vh;
         display: flex;
         flex-direction: row;
@@ -57,7 +57,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        width: 50%;
+        width: 100%;
         height: 10vh;
         padding: 10px 20px 10px 10px;
         background-color: var(--accent-color);

@@ -1,10 +1,453 @@
 /*Pour les écrans de mobiles*/
 @media screen  and (min-width: 320px) and (max-width: 768px) {
 
+    body {
+        font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
+        background-image: url('../assets/emeraude-background.jpg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .quizz-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        background-color: #f0f0f0;
+        background-image: url('../assets/saphir-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .quizz-name-container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .quizz-name {
+        color: white;
+        background-color: #333;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .quizz-name i {
+        font-size: 4rem;
+        padding: 10px;
+    }
+    
+    .score-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 10vh;
+        padding: 10px 20px 10px 10px;
+        background-color: var(--accent-color);
+    }
+
+    #score {
+        font-weight: 800;
+        padding: 10px;
+    }
+
+    .question {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .question-card-container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    
+    .question-card {
+        width: 600px;
+        height: max-content;
+        background-color: white;
+        border: 1px solid var(--primary-color);
+        border-radius: 10px;
+        margin: 10em auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    #question {
+        width: 90%;
+        margin: 10px;
+    }
+    
+    #question p{
+       font-weight: 800;
+    }
+    
+    #category {
+        color: white;
+        background-color: var(--primary-color);
+        width: 100%;
+        padding: 10px;
+        position: relative;
+    }
+    
+    #category::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        border-top: 10px solid var(--primary-color);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+
+    .question {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+    
+    input[type="radio"]:checked + label::before {
+        background-color: var(--primary-color);
+    }
+    
+    input[type="submit"] {
+        color: white;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        transform: scale(1.1);
+    }
+    
+    label {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    label:hover {
+        opacity: 0.8;
+    }
+    
+    label::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    #answer {
+        width: 90%;
+        margin: 10px;
+    }
+    
+    #answerText {
+        font-weight: 800;
+        color: var(--primary-color);
+    }
+    
+    #answerText::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /*Pied de page*/
+
+    footer {
+        background-color: var(--primary-color);
+        padding: 10px;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
+
 }
 
 /*Pour les écrans de tablettes*/
 @media screen  and (min-width: 768px) and (max-width: 1080px){
+    body {
+        font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
+        background-image: url('../assets/emeraude-background.jpg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .quizz-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        background-color: #f0f0f0;
+        background-image: url('../assets/saphir-background.jpg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .quizz-name-container {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .quizz-name {
+        color: white;
+        background-color: #333;
+        width: 50%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .quizz-name i {
+        font-size: 4rem;
+        padding: 10px;
+    }
+    
+    .score-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        height: 10vh;
+        padding: 10px 20px 10px 10px;
+        background-color: var(--accent-color);
+    }
+
+    #score {
+        font-weight: 800;
+        padding: 10px;
+    }
+
+    .question {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .question-card-container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    
+    .question-card {
+        width: 600px;
+        height: max-content;
+        background-color: white;
+        border: 1px solid var(--primary-color);
+        border-radius: 10px;
+        margin: 10em auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    #question {
+        width: 90%;
+        margin: 10px;
+    }
+    
+    #question p{
+       font-weight: 800;
+    }
+    
+    #category {
+        color: white;
+        background-color: var(--primary-color);
+        width: 100%;
+        padding: 10px;
+        position: relative;
+    }
+    
+    #category::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        border-top: 10px solid var(--primary-color);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+
+    .question {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+    
+    input[type="radio"]:checked + label::before {
+        background-color: var(--primary-color);
+    }
+    
+    input[type="submit"] {
+        color: white;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        transform: scale(1.1);
+    }
+    
+    label {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    label:hover {
+        opacity: 0.8;
+    }
+    
+    label::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    #answer {
+        width: 90%;
+        margin: 10px;
+    }
+    
+    #answerText {
+        font-weight: 800;
+        color: var(--primary-color);
+    }
+    
+    #answerText::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /*Pied de page*/
+
+    footer {
+        background-color: var(--primary-color);
+        padding: 10px;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
 
 }
 
