@@ -74,7 +74,7 @@
                         </div>
                         <div class="question-body">
                             <div>
-                                <input type="radio" value="a" name="questions${index}" class="input-rubis" id="a${index}" checked/>
+                                <input type="radio" value="a" name="questions${index}" id="a${index}" checked/>
                                 <label for="a${index}">${question.attributes.a}</label>
                             </div>
                             <div>
@@ -93,6 +93,9 @@
                         <div>
                             <input type="button" value="Valider" onclick="validateAnswer('questions${index}', '${question.attributes.correctAnswer}')"/>
                         </div>
+                        <div>
+                            <p id="correctAnswer${index}"></p>
+                        </div>
                     `;
                     container.appendChild(div);
                 });
@@ -100,7 +103,7 @@
             .catch(error => console.error('Erreur:', error));
             
 
-        const validateAnswer = (questionName, correctAnswer) => {
+        const validateAnswer = (questionName, correctAnswer, index) => {
             console.log('questionName :', questionName);
             console.log('correctAnswer :', correctAnswer);
             const radios = document.getElementsByName(questionName);
@@ -108,7 +111,11 @@
                 if (radios[i].checked) {
                     if (correctAnswer !== undefined && radios[i].value === correctAnswer) {
                         score++;
+                        const correctAnswerElement = document.getElementById(`correctAnswer${index}`);
                         document.getElementById('score').innerText = score;
+                        if (correctAnswerElement) {
+                            correctAnswerElement.innerText = "La bonne réponse est : " + correctAnswer;
+                        }
                     }
                     break;
                 }

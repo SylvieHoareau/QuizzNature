@@ -1,4 +1,4 @@
-<!--quizz-rubis.html-->
+<!--quizz-topaze.html-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -86,24 +86,33 @@
                         <div>
                             <input type="button" value="Valider" onclick="validateAnswer('questions${index}', '${question.attributes.correctAnswer}')"/>
                         </div>
+                        <div>
+                            <p id="correctAnswer${index}"></p>
+                        </div>
                     `;
                     container.appendChild(div);
                 })
                 .catch(error => console.error('Erreur:', error));
             })
 
-            const validateAnswer = (questionName, correctAnswer) => {
-                const radios = document.getElementsByName(questionName);
-                for (let i = 0; i < radios.length; i++) {
-                    if (radios[i].checked) {
-                        if (radios[i].value === correctAnswer) {
-                            score++;
-                            document.getElementById('score').innerText = score;
+        const validateAnswer = (questionName, correctAnswer, index) => {
+            console.log('questionName :', questionName);
+            console.log('correctAnswer :', correctAnswer);
+            const radios = document.getElementsByName(questionName);
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    if (correctAnswer !== undefined && radios[i].value === correctAnswer) {
+                        score++;
+                        const correctAnswerElement = document.getElementById(`correctAnswer${index}`);
+                        document.getElementById('score').innerText = score;
+                        if (correctAnswerElement) {
+                            correctAnswerElement.innerText = "La bonne réponse est : " + correctAnswer;
                         }
-                        break;
                     }
+                    break;
                 }
             }
+        }
     </script>
 </body>
 </html>
