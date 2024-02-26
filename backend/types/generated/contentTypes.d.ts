@@ -871,7 +871,6 @@ export interface ApiQuestionQuestion extends Schema.CollectionType {
       }>;
     correctAnswer: Attribute.String &
       Attribute.Required &
-      Attribute.Private &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -68,7 +68,6 @@
         }
       },
       "type": "string",
-      "private": true,
       "required": true
     },
     "category": {

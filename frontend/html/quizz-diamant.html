@@ -67,24 +67,24 @@
                         </div>
                         <div class="question-body">
                             <div>
-                                <input type="radio" value="a" name="questions${index}" id="a" checked/>
-                                <label>${question.attributes.a}</label>
+                                <input type="radio" value="a" name="questions${index}" id="a${index}" checked/>
+                                <label for="a${index}">${question.attributes.a}</label>
                             </div>
                             <div>
-                                <input type="radio" value="b" name="questions${index}" id="b"/>
-                                <label>${question.attributes.b}</label>
+                                <input type="radio" value="b" name="questions${index}" id="b${index}"/>
+                                <label for="b${index}">${question.attributes.b}</label>
                             </div>
                             <div>
-                                <input type="radio" value="c" name="questions${index}" id="c"/>
-                                <label>${question.attributes.c}</label>
+                                <input type="radio" value="c" name="questions${index}" id="c${index}"/>
+                                <label for="c${index}">${question.attributes.c}</label>
                             </div>
                             <div>
-                                <input type="radio" value="d" name="questions${index}" id="d"/>
-                                <label>${question.attributes.d}</label>
+                                <input type="radio" value="d" name="questions${index}" id="d${index}"/>
+                                <label for="d${index}">${question.attributes.d}</label>
                             </div>
                         </div>
                         <div>
-                            <input type="submit" value="Valider" onclick="validateAnswer('questions${index}', '${question.attributes.correctAnswer}')"/>
+                            <input type="button" value="Valider" onclick="validateAnswer('questions${index}', '${question.attributes.correctAnswer}')"/>
                         </div>
                     `;
                     container.appendChild(div);
