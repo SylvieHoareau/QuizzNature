@@ -158,6 +158,17 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
+
+    input[type="button"] {
+        color: white;
+        background-color: var(--accent-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
     
     input[type="submit"]:hover {
         transform: scale(1.1);
@@ -388,6 +399,17 @@
     input[type="submit"]:hover {
         transform: scale(1.1);
     }
+
+    input[type="button"] {
+        color: white;
+        background-color: var(--accent-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
     
     label {
         display: flex;
@@ -616,6 +638,21 @@
     input[type="submit"]:hover {
         transform: scale(1.1);
     }
+
+    input[type="button"] {
+        color: white;
+        background-color: var(--accent-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    input[type="button"]:hover {
+        transform: scale(1.1);
+    }
     
     label {
         display: flex;
@@ -640,7 +677,17 @@
     
     #answer {
         width: 90%;
+        height: 50px;
         margin: 10px;
+        padding: 10px;
+        border: 1px solid var(--accent-color);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        background-color: rgba(234, 255, 0, 0.746);
+
     }
     
     #answerText {
