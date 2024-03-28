@@ -1,12 +1,14 @@
 /*CSS Général*/
+/*Typographie*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
     --background-color: #72A2C0;
-    --primary-color: #00743F;
-    --secondary-color: #1D65A6;
+    --primary-color: #4CAF50;
+    --secondary-color: #F2F2F2;
     --tertiary-color: #192E5B;
-    --accent-color: #F2A104;
+    --accent-color: #FFA500;
 }
 
 * {
@@ -16,7 +18,8 @@
 }
 
 body {
-    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #333;
     background-color: #f0f0f0;
     background-image: url('../assets/background.jpg');
     height: 100vh;
@@ -24,48 +27,167 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    line-height: 1.6;
 }
+
+header {
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*Cards*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-container {
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: transparent;
+    position: relative;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s;
+    background-color: var(--secondary-color);
+}
+
+/*Effets de survol*/
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card-header, .card-footer {
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 250px;
+    height: max-content;
+    padding:  10px 5px 10px 5px;
+    margin: 10px;
+}
+
+/*Boutons et liens interactifs*/
+button, a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+/*Effets de survol*/
+button:hover, a:hover {
+    opacity: 0.8;
+    background-color: var(--accent-color);
+}
+
+/*Accessibilité*/
+a:focus, button:focus {
+    outline: 3px solid #4CAF50;
+    outline-offset: 2px;
+    outline: 3px dashed var(--accent-color);
+}
+
 
 /*Pour les écrans de mobiles*/
 @media screen  and (min-width: 320px) and (max-width: 768px) {
 
     header {
-        color: #fff;
-        background-color: var(--primary-color);
-        padding: 10px 0;
-        width: 100vw;
-        height: 10vh;
-        display: flex;
+        height: 30vh;
         flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-        gap: 20px;
-    }
-
-    header h1 {
-        margin: 0;
     }
 
     #logo {
-        width: 100px;
-        height: 100px;
-        margin: 5px;
+        width: 80px;
+        height: 80px;
     }
 
     header ul {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        height: max-content;
+        gap: 10px;
     }
 
     header ul li {
         display: inline;
         margin: 0 10px;
+        height: max-content;
     }
 
-    header ul li a {
-        color: #ffffff;
-        text-decoration: none;
+    .card {
+        width: 250px;
     }
 
 }
@@ -74,44 +196,13 @@ body {
 @media screen  and (min-width: 768px) and (max-width: 1080px){
 
     header {
-        color: #fff;
-        background-color: var(--primary-color);
-        padding: 10px 0;
-        width: 100vw;
         height: 10vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-        gap: 20px;
-    }
-
-    header h1 {
-        margin: 0;
     }
 
     #logo {
-        width: 100px;
-        height: 100px;
-        margin: 5px;
+        width: 90px;
+        height: 90px;
     }
-
-    header ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    header ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    header ul li a {
-        color: #ffffff;
-        text-decoration: none;
-    }
-
 
 }
 
@@ -120,48 +211,19 @@ body {
 @media screen and (min-width: 1024px) and (max-width: 2560px) {
 
     header {
-        color: #fff;
-        background-color: var(--primary-color);
-        padding: 10px 0;
-        width: 100vw;
-        height: 10vh;
-        display: flex;
+        height: 15vh;
         flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-        gap: 20px;
-    }
-
-    header h1 {
-        margin: 0;
     }
 
     #logo {
         width: 75px;
         height: 75px;
-        margin: 10px;
-    }
-
-    header ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    header ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    header ul li a {
-        color: #ffffff;
-        text-decoration: none;
     }
 
     /*Page index.html*/
 
     /*Carousel*/
-    .slider-wrapper {
+    /* .slider-wrapper {
         margin: 1rem;
         position: relative;
         overflow: hidden;
@@ -169,7 +231,6 @@ body {
 
     .slides-container {
         height: 1200px;
-        /* height: calc(100vh - 2rem); */
         width: 100%;
         display: flex;
         overflow: scroll;
@@ -232,88 +293,10 @@ body {
 
     .slide:nth-child(4) {
         background-color: #da6f2b;
-    }
-
-    .card-container {
-        width: 100vw;
-        height: max-content;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-        padding: 20px;
-        margin: 0 auto;
-        background-color: var(--secondary-color);
-    }
-
-    .card {
-        width: 300px;
-        height: max-content;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        margin: 20px;
-        padding: 0 0 10px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        transition: 0.3s;
-    }
-
-    .card:hover {
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .card-header, .card-footer {
-        color: #fff;
-        background-color: #333;
-        padding: 10px;
-        text-align: center;
-        width: 250px;
-        height: max-content;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-    }
-
-    .card-body {
-        background-color: rgba(255, 255, 255, 0.5);
-        width: 250px;
-        height: max-content;
-        padding:  10px 5px 10px 5px;
-        margin: 10px;
-    }
-
-    button {
-        color: white;
-        background-color: var(--tertiary-color);
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    button a {
-        color: white;
-        text-decoration: none;
-    }
-
+    } */
 
     footer {
-        color: #fff;
-        background-color: #333;
-        text-align: center;
-        padding: 10px;
-        width: 100vw;
         height: 10vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
         position: fixed;
         bottom: 0;
     }
