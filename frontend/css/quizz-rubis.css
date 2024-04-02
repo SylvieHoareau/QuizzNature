@@ -548,6 +548,13 @@
         font-weight: 800;
     }
 
+    #correctAnswer {
+        width: 100%;
+        height: auto;
+        color: white;
+        background-color: red;
+    }
+
     #feedback {
         text-align: center;
         margin-top: 1em;
@@ -560,6 +567,15 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    #result-container {
+        width: 750px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 10px;
     }
 
     /*Pied de page*/
@@ -717,7 +733,7 @@
         align-items: flex-start;
         align-content: center;
         justify-content: center;
-        display: none;
+        /* display: none; */
     }
     
     .question-body {
@@ -866,6 +882,12 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    #result-container {
+        margin: 0 auto;
+        background-color: white;
+        border: 1px solid red;
     }
 
     /*Pied de page*/

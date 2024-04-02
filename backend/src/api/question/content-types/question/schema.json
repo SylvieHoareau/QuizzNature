@@ -70,6 +70,15 @@
       "type": "string",
       "required": true
     },
+    "correctAnswerDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",

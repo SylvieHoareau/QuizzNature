@@ -1,0 +1,64 @@
+<!--quizz-rubis-list.html-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+    <link rel="stylesheet" media="screen" href="../css/style.css">
+    </link>
+    <link rel="stylesheet" media="screen" href="../css/quizz-rubis.css">
+    </link>
+    <link rel="stylesheet" media="print" href="../css/print.css">
+    </link>
+    <!--fontawesome-->
+    <link rel="stylesheet" media="screen"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </link>
+    <!--Javascript-->
+    <script src="../js/question-rubis-list.js"></script>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="../assets/logo-4.jpg" alt="logo de Quizz Nature" width="100px" height="100px">
+        <h1>Quizz Nature</h1>
+        <ul>
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a href="../index.html">Accueil</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-user"></i>
+                <a href="../html/login.html">Connexion</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="quizz-name-container">
+        <div class="quizz-name">
+            <i class="fa-solid fa-gem"></i>
+            <h1 id="quizzTitle">Quizz Rubis</h1>
+        </div>
+        <div class="score-container">
+            <span id="score">0</span> gem(s)
+        </div>
+    </div>
+    <!--Affiche les questions dans l'interface utilisateur-->
+    <div class="question-card" id="quizz-container"></div>
+
+    <!--Afficher le score final et le résultat-->
+    <div id="result-container" style="display: none;">
+        <h2>Résultat</h2>
+        <p>Score final : <span id="final-score"></span></p>
+        <p>Résultat : <span id="result"></span></p>
+        <button id="resetBtn">Recommencer</button>
+    </div>
+    <footer>
+        <p>Quizz Nature 2024</p>
+    </footer>
+
+</body>
+
+</html>
