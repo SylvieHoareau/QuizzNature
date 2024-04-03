@@ -51,6 +51,7 @@ header h1 {
     width: 100px;
     height: 100px;
     margin: 5px;
+    border-radius: 100%;
 }
 
 header ul {
@@ -140,6 +141,7 @@ button, a {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -161,7 +163,8 @@ a:focus, button:focus {
 @media screen  and (min-width: 320px) and (max-width: 768px) {
 
     header {
-        height: 30vh;
+        height: 50vh;
+        display: flex;
         flex-direction: column;
     }
 
@@ -176,6 +179,9 @@ a:focus, button:focus {
         display: flex;
         flex-direction: column;
         align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         height: max-content;
         gap: 10px;
     }
