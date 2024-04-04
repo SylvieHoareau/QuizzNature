@@ -205,12 +205,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }', '${question.attributes.correctAnswerDescription}', '${index}')"/>
                     </div>
                     <div>
-                        <p id="correctAnswer${index}" style="display: none;">La bonne réponse est : ${
-            question.attributes.correctAnswer
-          }</p>
+                        <p id="correctAnswer${index}" style="display: none; color: green;">Bonne réponse !</p>
+                        <p id="wrongAnswer${index}" style="display: none; color: red;">Mauvaise réponse ! La bonne réponse est : ${
+                          question.attributes.correctAnswer
+        }</p>
                         <p id="correctAnswerDescription${index}" style="display: none;">${
-            question.attributes.correctAnswerDescription
-          }</p>
+          question.attributes.correctAnswerDescription
+        }</p>
                     </div>
                 `;
           container.appendChild(div);
