@@ -283,7 +283,8 @@ label::before {
 }
 
 #result-container {
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 10px;
     background-color: white;
     border: 1px solid red;
 }
@@ -341,11 +342,23 @@ footer {
         font-size: 1rem;
     }
 
+    #result-container {
+        width: 90%;
+        margin: 2.5em auto;
+        padding: 2.5em;
+        border-radius: 10px;
+    }
+
 }
 
 /*Pour les écrans de tablettes*/
 @media screen  and (min-width: 768px) and (max-width: 1080px){
-
+    #result-container {
+        width: 75%;
+        margin: 2.5em auto;
+        padding: 2.5em;
+        border-radius: 10px;
+    }
     
 }
 
@@ -353,7 +366,12 @@ footer {
 
 @media screen and (min-width: 1024px) and (max-width: 2560px) {
 
-   
+    #result-container {
+        width: 50%;
+        margin: 2.5em auto;
+        padding: 2.5em;
+        border-radius: 10px;
+    }
 
 }
 

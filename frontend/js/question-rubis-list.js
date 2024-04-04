@@ -18,9 +18,12 @@ const validateAnswer = (
   console.log("correctAnswer :", correctAnswer);
   console.log("correctAnswerDescription :", correctAnswerDescription);
   const radios = document.getElementsByName(questionName);
+  let answeredCorrectly = false; // Variable pour suivre si la réponse a été donnée correctement
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       if (correctAnswer !== undefined && radios[i].value === correctAnswer) {
+        // La réponse est correcte
+        answeredCorrectly = true;
         score++;
         const correctAnswerElement = document.getElementById(
           `correctAnswer${index}`
@@ -30,6 +33,9 @@ const validateAnswer = (
         );
         document.getElementById("score").innerText = score;
         if (correctAnswerElement) {
+          correctAnswerElement.textContent = "Bonne réponse !";
+          correctAnswerElement.style.display = "block";
+        } else {
           correctAnswerElement.style.display = "block"; // Affiche la réponse
         }
         if (correctAnswerDescriptionElement) {
@@ -37,6 +43,13 @@ const validateAnswer = (
         }
       }
       break;
+    }
+  }
+  // Si la réponse n'est pas la bonne
+  if (!answeredCorrectly) {
+    const wrongAnswerElement = document.getElementById(`wrongAnswer${index}`);
+    if (wrongAnswerElement) {
+      wrongAnswerElement.style.display = "block";
     }
   }
   answeredQuestions++; // Incrémentez le nombre de questions répondues
@@ -108,8 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }', '${question.attributes.correctAnswerDescription}', '${index}')"/>
                     </div>
                     <div>
-                        <p id="correctAnswer${index}" style="display: none;">La bonne réponse est : ${
-          question.attributes.correctAnswer
+                        <p id="correctAnswer${index}" style="display: none; color: green;">Bonne réponse !</p>
+                        <p id="wrongAnswer${index}" style="display: none; color: red;">Mauvaise réponse ! La bonne réponse est : ${
+                          question.attributes.correctAnswer
         }</p>
                         <p id="correctAnswerDescription${index}" style="display: none;">${
           question.attributes.correctAnswerDescription
